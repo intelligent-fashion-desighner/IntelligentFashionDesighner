@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelligentFashionDesighner", "IntelligentFashionDesighner\IntelligentFashionDesighner.csproj", "{1116DFD3-5E4C-4B66-A746-3C5F237E7533}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1116DFD3-5E4C-4B66-A746-3C5F237E7533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1116DFD3-5E4C-4B66-A746-3C5F237E7533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1116DFD3-5E4C-4B66-A746-3C5F237E7533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1116DFD3-5E4C-4B66-A746-3C5F237E7533}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA1B6C6D-092C-486B-88C5-D189EF578EE2}
+	EndGlobalSection
+EndGlobal

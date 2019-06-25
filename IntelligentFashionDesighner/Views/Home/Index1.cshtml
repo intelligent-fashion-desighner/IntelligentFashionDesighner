@@ -1,0 +1,53 @@
+﻿@model  IEnumerable<IntelligentFashionDesighner.Models.ImageSlider>
+
+    
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+    <div id="banner-fade" style="width:100%">
+        <ul class="bjqs" >
+            <li><img src="~/Content/Images/Test1.jpg" alt="Hong Kong" title="Hong Kong" id="wows1_0" /></li>
+            <li><img src="~/Content/Images/fashion2.jpg" alt="Hong Kong" title="Hong Kong" id="wows1_0" /></li>
+            <li><img src="~/Content/Images/fashion3.jpg" alt="Hong Kong" title="Hong Kong" id="wows1_0" /></li>
+        </ul>
+    </div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Intelligent Fashion desighner is an automated software where you can generate fashion desighns and desighn blocks with just a click.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Getting trained</h2>
+        <p>A full comprehensive tutorial about installing and using the software.<br /><br /></p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Who are we</h2>
+        <p>Four university students who are enthusiastic about deep neural networks with computer vision.To connect to us and share your ideas with us please contact us via the following link</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
+<script>
+    
+
+    jQuery(function ($) {
+        $('.secret-source').secretSource({
+            includeTag: false
+        });
+
+        $('#banner-fade').bjqs({
+            height: 320,
+            width: 1020,
+            responsive: true,
+             
+        });
+    });
+
+</script>
