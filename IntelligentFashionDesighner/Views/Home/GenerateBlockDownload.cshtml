@@ -38,7 +38,6 @@
 </head>
 
 <body>
-
     @model  IntelligentFashionDesighner.Models.FileViewModel
     <!--==========================
       Header
@@ -57,8 +56,8 @@
                     <li class="menu-active"><a href="@Url.Action("Index","Home")">Home</a></li>
                     <li><a href="@Url.Action("Index","Home")">About Us</a></li>
                     <li><a href="@Url.Action("Index","Home")">Services</a></li>
-                    <li><a href="@Url.Action("Login","Account")">Login</a></li>
                     <li><a href="@Url.Action("Index","Home")">Team</a></li>
+                    <li><a href="@Url.Action("Index","Home")">Login</a></li>
                     <li><a href="@Url.Action("Index","Home")">Contact</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
@@ -85,6 +84,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div class="carousel-background"><img src="~/Content/img/intro-carousel/fashion2.jpg" alt=""></div>
                         <div class="carousel-container">
@@ -126,37 +126,26 @@
     <main id="main">
         @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <section id="services">
-                <div class="container" style="padding-left:400px">
-                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" style="height:350px">
-                        <div class="icon"><i class="ion-ios-cloud-upload-outline" style="padding-top:30px"></i></div>
-                        <h4 class="title"><a href="">Upload Image</a></h4>
-                        <p class="description">Please upload images with high quality for better perfomance of the module</p>
+            <section id="portfolio" class="section-bg">
+                <div class="container">
+                    <header class="section-header"></header>
+                        <div class="row portfolio-container">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="~/Content/img/block.jpg" class="img-fluid" alt="" style="height:100%;width:100%">
+                                        <a href="~/Content/img/block.jpg" data-lightbox="portfolio" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                        @*<a href="@Url.Action("UploadFile","Home")" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>*@
+                                    </figure>
 
-
-                        <div class="input-group" style="padding-top:20px">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                            </div>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                       aria-describedby="inputGroupFileAddon01" multiple name="files">
-                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                    <div class="portfolio-info">
+                                        <h4><a href="@Url.Action("GenerateBlockDownloadFile","Home", new { ImageName = "~/Content/img/about-mission.jpg" },null)">Download</a></h4>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div id="file-upload-filename"></div>
-                            <div class="custom-file">
-                                <label style="padding-top:20px">No of images to generate:</label>
-                                @Html.TextBoxFor(m => m.noOfImages)
-                            </div>
-                            <div style="padding-top:20px">
-                                <input type="submit" class="input-group-prepend" placeholder="Upload" />
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </section>
+            </section><!-- #portfolio -->
         }
 
     </main>

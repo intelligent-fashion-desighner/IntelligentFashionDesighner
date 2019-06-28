@@ -38,7 +38,6 @@
 </head>
 
 <body>
-
     @model  IntelligentFashionDesighner.Models.FileViewModel
     <!--==========================
       Header
@@ -54,11 +53,11 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li class="menu-active"><a href="#intro">Home</a></li>
                     <li><a href="@Url.Action("Index","Home")">About Us</a></li>
                     <li><a href="@Url.Action("Index","Home")">Services</a></li>
-                    <li><a href="@Url.Action("Login","Account")">Login</a></li>
                     <li><a href="@Url.Action("Index","Home")">Team</a></li>
+                    <li><a href="@Url.Action("Index","Home")">Login</a></li>
                     <li><a href="@Url.Action("Index","Home")">Contact</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
@@ -73,7 +72,8 @@
 
                 <ol class="carousel-indicators"></ol>
 
-                <div class="carousel-inner" role="listbox">
+                <div class="carousel-inner" 
+                     ="listbox">
 
                     <div class="carousel-item active">
                         <div class="carousel-background"><img src="~/Content/img/intro-carousel/fashion1.jpg" alt=""></div>
@@ -85,6 +85,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div class="carousel-background"><img src="~/Content/img/intro-carousel/fashion2.jpg" alt=""></div>
                         <div class="carousel-container">
@@ -128,29 +129,25 @@
         {
             <section id="services">
                 <div class="container" style="padding-left:400px">
-                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" style="height:350px">
-                        <div class="icon"><i class="ion-ios-cloud-upload-outline" style="padding-top:30px"></i></div>
-                        <h4 class="title"><a href="">Upload Image</a></h4>
-                        <p class="description">Please upload images with high quality for better perfomance of the module</p>
+                    <div>
+                        <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                            <div class="icon"><i class="ion-ios-cloud-upload-outline" style="padding-top:30px"></i></div>
+                            <h4 class="title"><a href="">Upload Image</a></h4>
+                            <p class="description">Please upload images with high quality for better perfomance of the module</p>
 
 
-                        <div class="input-group" style="padding-top:20px">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                            </div>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                       aria-describedby="inputGroupFileAddon01" multiple name="files">
-                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div id="file-upload-filename"></div>
-                            <div class="custom-file">
-                                <label style="padding-top:20px">No of images to generate:</label>
-                                @Html.TextBoxFor(m => m.noOfImages)
+                            <div class="input-group" style="padding-top:30px">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                           aria-describedby="inputGroupFileAddon01" multiple name="files">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
                             </div>
                             <div style="padding-top:20px">
+                                <div id="file-upload-filename"></div>
                                 <input type="submit" class="input-group-prepend" placeholder="Upload" />
                             </div>
                         </div>

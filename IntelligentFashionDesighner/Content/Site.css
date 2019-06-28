@@ -1,12 +1,10 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+  
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    /*padding-left: 15px;
-    padding-right: 15px;*/
+   
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -42,14 +40,15 @@ textarea {
     background-color: #18d26e;
     border: none;
     color: white;
-    padding: 12px 30px;
+    padding: 5pc 5px;
     cursor: pointer;
     font-size: 20px;
 }
 
     /* Darker background on mouse-over */
     .btn:hover {
-        background-color: RoyalBlue;
+        background: #18d26e;
+  border: 2px solid #18d26e;
     }
 
 .transfer1 {

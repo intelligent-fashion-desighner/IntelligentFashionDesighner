@@ -10,6 +10,7 @@ namespace IntelligentFashionDesighner.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             string[] filePaths = Directory.GetFiles(Server.MapPath("~/Content/Images/"));
@@ -39,36 +40,95 @@ namespace IntelligentFashionDesighner.Controllers
 
             return View();
         }
+       
         public ActionResult UploadFile()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult UploadFile(FileViewModel images)
+        public ActionResult UploadFile(IEnumerable<HttpPostedFileBase> files, FileViewModel model)
         {
-            foreach(var image in images.Files)
-            if (image.ContentLength > 0)
+            //ViewBag.mes = model.noOfImages;
+            foreach (var file in files)
             {
-                var fileName = Path.GetFileName(image.FileName);
-                var path = Path.Combine(Server.MapPath("~/Content/Images"),fileName);
-                image.SaveAs(path);
+                if (file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                    file.SaveAs(path);
+                }
             }
-            return RedirectToAction("UploadFile");
+            return RedirectToAction("DownloadFile", "Home", new { model.noOfImages });
         }
-        
 
-        public ActionResult DownloadFile()
+
+
+        public ActionResult DownloadFile(int noOfImages)
         {
-            var dir = new System.IO.DirectoryInfo(Server.MapPath("~/Content/Images/"));
-            System.IO.FileInfo[] fileNames = dir.GetFiles("*.*");
-            List<string> items = new List<string>();
+            var fileNames = Directory.GetFiles((Server.MapPath("~/Content/Images")));
+            //System.IO.FileInfo[] fileNames = dir.GetFiles("*.*");
+            FileViewModel fileView = new FileViewModel();
+            fileView.noOfImages = noOfImages;
             foreach (var file in fileNames)
             {
-                items.Add( Path.Combine(Server.MapPath("~/Content/Images"), file.Name));
+                var onefileName = Path.Combine(Server.MapPath("~/Content/Images"), file);
+                string vPath = onefileName.Replace(@"D:\IntelligentFashionDesighner\IntelligentFashionDesighner", "").Replace(@"\", "/");
+                fileView.namesOfFiles.Add(vPath);
             }
-            return View(items);
+            return View(fileView);
         }
         public FileResult Download(string ImageName)
+        {
+            var FileVirtualPath = "~" + ImageName;
+            return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
+        }
+        public ActionResult GenerateBlock()
+        {
+            return View();
+        }
+        public ActionResult GenerateBlockUpload()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult GenerateBlockUpload(IEnumerable<HttpPostedFileBase> files, FileViewModel model)
+        {
+            //ViewBag.mes = model.noOfImages;
+            foreach (var file in files)
+            {
+                if (file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                    file.SaveAs(path);
+                }
+            }
+            return RedirectToAction("GenerateBlockDownload", "Home");
+        }
+        public ActionResult GenerateBlockDownload()
+        {
+            return View();
+        }
+       
+        public FileResult GenerateBlockDownloadFile(string ImageName)
+        {
+            var FileVirtualPath = ImageName;
+            return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
+        }
+        public ActionResult ViewAll()
+        {
+            var fileNames = Directory.GetFiles((Server.MapPath("~/Content/Images")));
+            //System.IO.FileInfo[] fileNames = dir.GetFiles("*.*");
+            FileViewModel fileView = new FileViewModel();
+            foreach (var file in fileNames)
+            {
+                var onefileName = Path.Combine(Server.MapPath("~/Content/Images"), file);
+                string vPath = onefileName.Replace(@"D:\IntelligentFashionDesighner\IntelligentFashionDesighner", "").Replace(@"\", "/");
+                fileView.namesOfFiles.Add(vPath);
+            }
+            return View(fileView);
+        }
+        public FileResult ViewAllDownLoad(string ImageName)
         {
             var FileVirtualPath = ImageName;
             return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));

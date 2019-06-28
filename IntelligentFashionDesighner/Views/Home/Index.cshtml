@@ -70,7 +70,8 @@
 
                 <ol class="carousel-indicators"></ol>
 
-                <div class="carousel-inner" role="listbox">
+                <div class="carousel-inner" 
+                     ="listbox">
 
                     <div class="carousel-item active">
                         <div class="carousel-background"><img src="~/Content/img/intro-carousel/fashion1.jpg" alt=""></div>
@@ -187,8 +188,8 @@
             <div class="container text-center">
                 <h3>Register</h3>
                 <p>Please create an account to sighn in and explore the functionalities of the system.</p>
-                <a class="cta-btn" href="#">Register</a><br />
-                <a class="cta-btn" href="#">Sighin</a>
+                <a class="cta-btn" href="@Url.Action("Register","Account")">Register</a><br />
+                <a class="cta-btn" href="@Url.Action("Login","Account")">Login</a>
             </div>
         </section><!-- #call-to-action -->
         <!--==========================
@@ -271,12 +272,12 @@
                         <div class="portfolio-wrap">
                             <figure>
                                 <img src="~/Content/img/fashionDesighning.jpg" class="img-fluid" alt="" style="height:100%">
-                                <a href="~/Content/img/fashionDesighning.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                                @*<a href="~/Content/img/fashionDesighning.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="@Url.Action("UploadFile","Home")" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>*@
                             </figure>
 
                             <div class="portfolio-info">
-                                <h4><a href="#">Fashion generation</a></h4>
+                                <h4><a href="@Url.Action("UploadFile","Home")">Fashion generation</a></h4>
                             </div>
                         </div>
                     </div>
@@ -285,12 +286,12 @@
                         <div class="portfolio-wrap">
                             <figure>
                                 <img src="~/Content/img/block.jpeg" class="img-fluid" alt="" style="height:100%">
-                                <a href="~/Content/img/block.jpeg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                                @*<a href="~/Content/img/block.jpeg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>*@
                             </figure>
 
                             <div class="portfolio-info">
-                                <h4><a href="#">Block Generation</a></h4>
+                                <h4><a href="@Url.Action("GenerateBlock","Home")">Block Generation</a></h4>
                             </div>
                         </div>
                     </div>
@@ -299,12 +300,12 @@
                         <div class="portfolio-wrap">
                             <figure>
                                 <img src="~/Content/img/gallery.jfif" class="img-fluid" alt="" style="height:100%">
-                                <a href="~/Content/img/gallery.jfif" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                                @*<a href="~/Content/img/gallery.jfif" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>*@
+                                @*<a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>*@
                             </figure>
 
                             <div class="portfolio-info">
-                                <h4><a href="#">View Gallery</a></h4>
+                                <h4><a href="@Url.Action("ViewAll","Home")">View Gallery</a></h4>
                             </div>
                         </div>
                     </div>
@@ -425,7 +426,7 @@
                         <div class="contact-phone">
                             <i class="ion-ios-telephone-outline"></i>
                             <h3>Phone Number</h3>
-                            <p><a href="tel:+155895548855">+94112567567/a></p>
+                            <p><a href="tel:+155895548855">+94112567567</p>
                         </div>
                     </div>
 

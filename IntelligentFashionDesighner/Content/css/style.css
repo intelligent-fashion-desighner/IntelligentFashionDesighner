@@ -601,7 +601,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 
 #featured-services {
-  background: #000;
+ background: url("../img/about-bg.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+  position: relative;
 }
 
 #featured-services .box {
@@ -639,6 +642,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
   margin-bottom: 0;
 }
+
 
 /* About Us Section
 --------------------------------*/
@@ -740,9 +744,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 
 #services {
-  background: #fff;
-  background-size: cover;
-  padding: 60px 0 40px 0;
+  background: #fff; 
+   background-size: cover;
+  padding: 60px 0 40px 0; 
+  /* background: url("../img/about-bg.jpg") center top no-repeat fixed; */
+  /* background-size: cover; */
+  /* padding: 60px 0 40px 0; */
+  /* position: relative; */
 }
 
 #services .box {
@@ -781,6 +789,26 @@ body.mobile-nav-active #mobile-nav-toggle {
   line-height: 24px;
   margin-bottom: 0;
 }
+#services.back {
+background: url("../img/about-bg.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+  position: relative;
+}
+#services.cta-btn {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}	
 
 /* Call To Action Section
 --------------------------------*/

@@ -45,19 +45,19 @@
         <div class="container-fluid">
 
             <div id="logo" class="pull-left">
-                <h1><a href="#intro" class="scrollto">Fashion Designer</a></h1>
+                <h1><a href="@Url.Action("Index","Home")" class="scrollto">Fashion Designer</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#intro">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#portfolio">Services</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#call-to-action">Login</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="menu-active"><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><a href="@Url.Action("Index","Home")">About Us</a></li>
+                    <li><a href="@Url.Action("Index","Home")">Services</a></li>
+                    <li><a href="@Url.Action("Index","Home")">Team</a></li>
+                    <li><a href="@Url.Action("Index","Home")">Login</a></li>
+                    <li><a href="@Url.Action("Index","Home")">Contact</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -125,10 +125,9 @@
     <main id="main">
         @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <section id="services">
+            <section id="contact">
                 <div class="container">
                     @Html.AntiForgeryToken()
-                    <h4>Create a new account.</h4>
                     <hr />
                     @Html.ValidationSummary("", new { @class = "text-danger" })
                     <div class="form-group">
@@ -178,10 +177,11 @@
                             <input type="submit" class="btn btn-default" value="Register" />
                         </div>
                     </div>
+                    <a class="cta-btn" href="@Url.Action("Login","Account")">Sighin</a>
                 </div>
             </section>
         }
-
+       
     </main>
 
     <!--==========================
