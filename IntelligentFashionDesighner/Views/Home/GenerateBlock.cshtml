@@ -28,13 +28,6 @@
 
     <!-- Main Stylesheet File -->
     <link href="~/Content/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-      Theme Name: BizPage
-      Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-      Author: BootstrapMade.com
-      License: https://bootstrapmade.com/license/
-    ======================================================= -->
 </head>
 
 <body>
@@ -47,18 +40,24 @@
 
             <div id="logo" class="pull-left">
                 <h1><a href="@Url.Action("Index","Home")" class="scrollto">Fashion Designer</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="@Url.Action("Index","Home")">Home</a></li>
                     <li><a href="@Url.Action("Index","Home")">About Us</a></li>
-                    <li><a href="@Url.Action("Index","Home")">Services</a></li>
-                    <li><a href="@Url.Action("Index","Home")">Team</a></li>
-                    <li><a href="@Url.Action("Index","Home")">Login</a></li>
+                    <li class="menu-has-children">
+                        <a href="@Url.Action("Index","Home")" class="sf-with-ul">Services</a>
+                        <ul style="display: none;">
+                            <li><a href="@Url.Action("UploadFile","Home")">Fashion generation</a></li>
+                            <li><a href="@Url.Action("GenerateBlock","Home")">Block generation</a></li>
+                            <li><a href="@Url.Action("ViewAll","Home")">View Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="@Url.Action("Login","Account")">Login</a></li>
                     <li><a href="@Url.Action("Index","Home")">Contact</a></li>
+                    <li><a href="@Url.Action("Index","Home")">Team</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -190,19 +189,9 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
-                -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                &copy; Copyright <strong>Intelligent Desighner</strong>. All Rights Reserved
             </div>
         </div>
     </footer><!-- #footer -->

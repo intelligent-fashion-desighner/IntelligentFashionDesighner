@@ -27,12 +27,6 @@
     <!-- Main Stylesheet File -->
     <link href="~/Content/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-      Theme Name: BizPage
-      Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-      Author: BootstrapMade.com
-      License: https://bootstrapmade.com/license/
-    ======================================================= -->
 </head>
 
 <body>
@@ -45,15 +39,20 @@
 
             <div id="logo" class="pull-left">
                 <h1><a href="#intro" class="scrollto">Fashion Designer</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="#intro">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#portfolio">Services</a></li>
+                    <li class="menu-has-children">
+                        <a href="#portfolio" class="sf-with-ul">Services</a>
+                        <ul style="display: none;">
+                            <li><a href="@Url.Action("UploadFile","Home")">Fashion generation</a></li>
+                            <li><a href="@Url.Action("GenerateBlock","Home")">Block generation</a></li>
+                            <li><a href="@Url.Action("ViewAll","Home")">View Gallery</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#team">Team</a></li>
                     <li><a href="#call-to-action">Login</a></li>
                     <li><a href="#contact">Contact</a></li>
